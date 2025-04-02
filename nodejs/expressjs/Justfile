@@ -1,3 +1,6 @@
+#!/bin/bash
+APP_NAME := "app"
+
 set dotenv-required := true
 set dotenv-load := true
 set dotenv-path := "./.env"
@@ -18,8 +21,8 @@ kill:
 restart:
     docker compose down
     docker compose up
-    just logs server
+    just logs {{APP_NAME}}
 
 [doc("see the application log")]
 logs:
-    docker compose logs -f server
+    docker compose logs -f {{APP_NAME}}

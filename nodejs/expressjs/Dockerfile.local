@@ -6,4 +6,4 @@ COPY . .
 
 RUN npm install --save
 
-CMD [ "npm" , "--watch", "app/index.js" ]
+CMD [ "node" , "--watch", "index.js" ]

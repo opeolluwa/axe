@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 
-// import {AppDataSource} from "./config/database.js";
+import { databasePool} from "./config/database.js";
 
 dotenv.config();
 
@@ -13,8 +13,10 @@ app.use(express.json())
 app.use(cors())
 
 app.listen(PORT, async () => {
-    // AppDataSource.initialize().then(status => {
-    //     console.log(status)
-    // }).catch(err => console.log(err))
+    await databasePool.connect().then(() => {
+        console.log("Database connected successfully ");
+    }).catch(error => {
+        console.log(error);
+    });
     console.log("ignition started on port:" + PORT);
 })

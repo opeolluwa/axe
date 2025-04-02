@@ -29,7 +29,7 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=axe
+      - POSTGRES_DB=axe_express_js
       - POSTGRES_USER=axe
       - POSTGRES_PASSWORD=axe
     ports:
