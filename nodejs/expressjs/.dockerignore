@@ -1,0 +1,13 @@
+node_modules
+
+.gitignore
+
+README.md
+
+Dockerfile.local
+
+Dockerfile.prod
+
+.git
+
+.idea
